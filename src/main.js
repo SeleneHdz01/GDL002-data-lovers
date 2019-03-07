@@ -65,10 +65,10 @@ function pokeCard(objetPoke) {
   //console.log(objetPoke);
   return `
   <div class="poke-box">
-  <p>Name: ${objetPoke.name}</p>
+  <p class="fontCompare">Name: ${objetPoke.name}</p>
   <p><img src="${objetPoke.img}"></p>
-  <p>Type: ${objetPoke.type}</p>
-  <p>Weakness: ${objetPoke.weaknesses}</p>
+  <p class="fontCompare">Type: ${objetPoke.type}</p>
+  <p class="fontCompare">Weakness: ${objetPoke.weaknesses}</p>
   </div>
 `;
 }
@@ -97,11 +97,11 @@ let orderNameList = document.getElementById("orderName");
 orderNameList.addEventListener("click", () => {
   let pokeList = allPokemons.sortData(window.POKEMON.pokemon);
   let pokemonBox = document.getElementById("allList");
-  let htmlBox = "";
+  let card = "";
   for (let contPokemon = 0; contPokemon < pokeList.length; contPokemon++) {
-    htmlBox += `<section class="pokemonImgs"><span>${pokeList[contPokemon].num} ${pokeList[contPokemon].name}
+    card += `<section class="pokemonImgs"><span>${pokeList[contPokemon].num} ${pokeList[contPokemon].name}
                 ${pokeList[contPokemon].weight}${pokeList[contPokemon].height}
                 <div><img src="${pokeList[contPokemon].img}"/></div></span></section>`;
   }
-  pokemonBox.innerHTML = htmlBox;
+  pokemonBox.innerHTML = card;
 });
